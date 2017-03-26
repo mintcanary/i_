@@ -1,0 +1,15 @@
+{
+  "name": "ismth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Gruntfile.js",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-cssmin": "^2.0.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0"
+  },
+  "scripts": {
+    "build": "grunt sass && grunt cssmin"
+  }
+}
