@@ -132,39 +132,58 @@ body {
     font-weight: 400;
     line-height: 1;
     margin: 0; }
-  .ismth h1 span {
-    display: inline-block;
-    width: 20vmin;
-    height: 20vmin;
-    position: relative;
-    top: 4vmin;
-    background-image: url("../img/mono/2764.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain; }
-    .ismth h1 span em {
-      border: 0;
-      clip: rect(0 0 0 0);
-      height: 1px;
-      margin: -1px;
-      overflow: hidden;
-      padding: 0;
+  .ismth h1 > span {
+    position: relative; }
+    .ismth h1 > span > span {
+      display: inline-block;
+      width: 20vmin;
+      height: 20vmin;
+      position: relative;
+      top: 3vmin;
+      background-image: url("../img/mono/2764.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain; }
+      .ismth h1 > span > span em {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px; }
+        .ismth h1 > span > span em.focusable:active, .ismth h1 > span > span em.focusable:focus {
+          clip: auto;
+          height: auto;
+          margin: 0;
+          overflow: visible;
+          position: static;
+          width: auto; }
+    .ismth h1 > span:before {
+      content: '';
+      display: block;
+      border: dashed 1vmin rgba(255, 255, 255, 0);
+      border-radius: 50%;
       position: absolute;
-      width: 1px; }
-      .ismth h1 span em.focusable:active, .ismth h1 span em.focusable:focus {
-        clip: auto;
-        height: auto;
-        margin: 0;
-        overflow: visible;
-        position: static;
-        width: auto; }
+      top: -1vmin;
+      left: -1vmin;
+      width: 20vmin;
+      height: 20vmin;
+      -webkit-transition: border-color 1000ms linear;
+      -moz-transition: border-color 1000ms linear;
+      -o-transition: border-color 1000ms linear;
+      -ms-transition: border-color 1000ms linear;
+      transition: border-color 1000ms linear; }
+  .ismth h1:hover > span:before {
+    border-color: rgba(255, 255, 255, 0.2); }
 
 .selection {
   position: absolute;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 2;
+  z-index: 3;
   display: none; }
   .selection > div {
     display: table-cell;
@@ -179,40 +198,44 @@ body {
     max-width: 90vw; }
     .selection ul li {
       display: inline-block;
-      padding: 1vmin; }
+      padding: 1vmin;
+      cursor: pointer; }
 
 body.smile .ismth {
   background-color: #e7b300; }
-  body.smile .ismth h1 span {
+  body.smile .ismth h1 > span > span {
     background-image: url("../img/colour/1f642.svg"); }
 
 body.heart .ismth {
   background-color: #FF5A79; }
-  body.heart .ismth h1 span {
+  body.heart .ismth h1 > span > span {
     background-image: url("../img/mono/2764.svg"); }
 
 body.cry .ismth {
   background-color: #65B1EF; }
-  body.cry .ismth h1 span {
+  body.cry .ismth h1 > span > span {
     background-image: url("../img/colour/1f622.svg"); }
 
 body.rage .ismth {
   background-color: #302424; }
-  body.rage .ismth h1 span {
+  body.rage .ismth h1 > span > span {
     background-image: url("../img/colour/1f621.svg"); }
 
 body.draw .ismth {
   background-color: #2b4bda; }
-  body.draw .ismth h1 span {
+  body.draw .ismth h1 > span > span {
     background-image: url("../img/colour/270f.svg"); }
 
 body.party .ismth {
   background-color: #1eb5a6; }
-  body.party .ismth h1 span {
+  body.party .ismth h1 > span > span {
     background-image: url("../img/colour/1f388.svg"); }
 
 body.select .selection {
   display: table; }
+
+.js h1 > span > span {
+  cursor: pointer; }
 
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
